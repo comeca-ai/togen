@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 40 20% 97%;
+    --foreground: 210 15% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 15%;
+
+    --primary: 188 85% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 30% 94%;
+    --secondary-foreground: 210 15% 15%;
+
+    --muted: 40 20% 92%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 16 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 188 85% 28%;
+
+    --radius: 0.75rem;
+
+    --gradient-hero: linear-gradient(135deg, hsl(188 85% 28%), hsl(188 75% 38%));
+    --gradient-subtle: linear-gradient(180deg, hsl(40 20% 97%), hsl(40 25% 95%));
+    --gradient-accent: linear-gradient(135deg, hsl(16 90% 65%), hsl(16 85% 70%));
+    
+    --shadow-soft: 0 4px 24px -2px hsl(188 85% 28% / 0.08);
+    --shadow-medium: 0 8px 32px -4px hsl(188 85% 28% / 0.12);
+    --shadow-large: 0 16px 48px -8px hsl(188 85% 28% / 0.16);
+    
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Tengo Design System */
+    --tengo-primary: 160 84% 39%;
+    --tengo-accent: 48 96% 53%;
+    --tengo-background: 0 0% 98%;
+    --tengo-surface: 0 0% 100%;
+    --tengo-foreground: 220 20% 15%;
+    --tengo-muted: 220 10% 50%;
+    --tengo-border: 220 10% 90%;
+  }
+
+  .dark {
+    --background: 210 20% 12%;
+    --foreground: 40 20% 95%;
+
+    --card: 210 18% 15%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 210 18% 15%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 188 75% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 20%;
+    --secondary-foreground: 40 20% 95%;
+
+    --muted: 210 15% 18%;
+    --muted-foreground: 40 10% 60%;
+
+    --accent: 16 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 22%;
+    --input: 210 15% 22%;
+    --ring: 188 75% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
